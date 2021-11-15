@@ -1,7 +1,1 @@
-@extends('template.template')
-@section('content')
-
-
-
-
-    @endsection
+@include('template.template')

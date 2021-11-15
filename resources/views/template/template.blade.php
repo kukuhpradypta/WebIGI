@@ -222,24 +222,17 @@
         <section id="featured-services" class="featured-services section-bg">
             <div class="container-fluid p-5">
                 <div class="row no-gutters">
-                    <div class="col-lg-4 col-md-6">
-                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/9YffrCViTVk"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/9YffrCViTVk"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <iframe width="100%" height="250" src="https://www.youtube.com/embed/9YffrCViTVk"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
+                    @foreach ($vidios as $vidio)
+
+
+                        <div class="col-lg-4 col-md-6">
+                            <iframe width="100%" height="250" src="{{ $vidio->vidio }}" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </section>
@@ -250,275 +243,304 @@
         <!-- End About Us Section -->
 
         <!-- ======= Why Us Section ======= -->
-                    <div class="col-lg-6 col-md-6 content-item">
-                        @yield('content')
-                    </div>
-                    <section id="why-us" class="why-us">
-                        <div class="container-fluid">
-                            <div class="row no-gutters">
-                                <div class="col-lg-3 col-md-6 content-item">
-                                  <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2" style="width: 105%;">KATEGORI 1</div>
-                                    
-                        <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in" data-aos-delay="100">
-                          <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 " style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-        
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 " style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                          
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 " style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                    </div>
-                                </div>
-        
-                                <div class="col-lg-6 col-md-6 content-item">
-                                  <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2" style="width: 103%; margin-left: -11px;">ARTIKEL TERBARU</div>
-                                  <div class="row">
-        
-                                <div class="card col-lg-4 col-md-6 pe-2 ani">
-                                  <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..." height="170px">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and make</p>
-                                    <a href="#">Read More...</a>
-                                  </div>
-                                </div>
-        
-                                <div class="card col-lg-4 col-md-6 ps-2 ani">
-                                  <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..." height="170px">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and make</p>
-                                    <a href="#">Read More...</a>
-                                  </div>
-                                </div>
-        
-                                <div class="card col-lg-4 col-md-6 ps-2 ani">
-                                  <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..." height="170px">
-                                  <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and make</p>
-                                    <a href="#">Read More...</a>
-                                  </div>
-                                </div>
-        
-                              </div>   
-                          </div>
-                           <div class="col-lg-3 col-md-6 content-item">
-                                  <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2 "style="width: 105%;">KATEGORI 2</div>
-                                    
-                          <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in" data-aos-delay="100">
-                          <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 " style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-        
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 " style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                      
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2" style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-        
-                    </div>
-                                </div>
+        <div class="col-lg-6 col-md-6 content-item">
+            @yield('content')
+        </div>
+        <section id="why-us" class="why-us">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-6 content-item">
+                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2" style="width: 105%;">KATEGORI 1
                         </div>
-                      </div>
-                        
-                    </section>
-        
-                    <section id="why-us" class="why-us">
-                        <div class="container-fluid">
-                            <div class="row no-gutters">
-                                <div class="col-lg-3 col-md-6 content-item">
-                                  <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light" style="width: 105%;">KATEGORI 3</div>
-                                    
-                            <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in" data-aos-delay="100">
-                          <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2" style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-        
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2" style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-                      
-                      <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2" style="width: 100%; margin-left: 20px;">
-                          <a class="card-petugas" href="">
-                              <div class="row">
-                                <div class="col-4 mt-3 mb-3">
-                                      <img src="template/assets/img/team/team-1.jpg" class="card-img-top" alt="..." >
-                                  </div>
-                                  <div class="col-8">
-                                      <div class="card-body" style="width: 100%">
-                                          <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                                      </div>
-                                  </div>
-                              </div>
-                          </a>
-                      </div>
-        
-                    </div>
-                                </div>
-        
-                                <div class="col-lg-6 col-md-6  content-item">
-                                  
-                                    <div class="text-center">
-                                    <img src="template/assets/img/team/team-1.jpg" width="80%" height="500px" alt="">
-                                  </div>
-                                  <h4 class="mt-4 fw-bold" style="font-size: 24px;">Lorem ipsum dolor sit amet</h4>
-                                    <p style="margin-top: -2%;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto harum ex explicabo distinctio, consectetur illo quibusdam blanditiis nostrum accusamus! Voluptatibus deserunt ea minus nostrum dolorum explicabo ipsa esse ipsum labore.</p>
-                                </div>
-        
-                                <div class="col-lg-3 col-md-6 content-item">
-                                  <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light ">INSTAGRAM</div>
-                                    
-                                    <img src="template/assets/img/team/instagram.png" class="mt-2" alt="" width="100%" height="400px">
-                                </div>
+
+                        <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    </section>
-                    <!-- End Why Us Section -->
-        
-                    <!-- ======= Our Clients Section ======= -->
-                    
-                <!-- ======= Footer ======= -->
-                <footer id="footer">
-                    <div class="container">
-                        <h3>Green</h3>
-                        <p>
-                            Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis
-                            magni eligendi fuga maxime saepe commodi placeat.
-                        </p>
-                        <div class="social-links">
-                            <a href="#" class="twitter"
-                                ><i class="bx bxl-twitter"></i
-                            ></a>
-                            <a href="#" class="facebook"
-                                ><i class="bx bxl-facebook"></i
-                            ></a>
-                            <a href="#" class="instagram"
-                                ><i class="bx bxl-instagram"></i
-                            ></a>
-                            <a href="#" class="google-plus"
-                                ><i class="bx bxl-skype"></i
-                            ></a>
-                            <a href="#" class="linkedin"
-                                ><i class="bx bxl-linkedin"></i
-                            ></a>
-                        </div>
-                        <div class="copyright">
-                            &copy; Copyright <strong><span>Green</span></strong
-                            >. All Rights Reserved
-                        </div>
-                        <div class="credits">
-                            <!-- All the links in the footer should remain intact. -->
-                            <!-- You can delete the links only if you purchased the pro version. -->
-                            <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
-                            Designed by
-                            <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 content-item">
+                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2"
+                            style="width: 103%; margin-left: -11px;">ARTIKEL TERBARU</div>
+                        <div class="row">
+
+                            <div class="card col-lg-4 col-md-6 pe-2 ani">
+                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
+                                    height="170px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text mb-2">Some quick example text to build on the card title and
+                                        make</p>
+                                    <a href="#">Read More...</a>
+                                </div>
+                            </div>
+
+                            <div class="card col-lg-4 col-md-6 ps-2 ani">
+                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
+                                    height="170px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text mb-2">Some quick example text to build on the card title and
+                                        make</p>
+                                    <a href="#">Read More...</a>
+                                </div>
+                            </div>
+
+                            <div class="card col-lg-4 col-md-6 ps-2 ani">
+                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
+                                    height="170px">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text mb-2">Some quick example text to build on the card title and
+                                        make</p>
+                                    <a href="#">Read More...</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                </footer>
-                <!-- End Footer -->
-        
-                <a
-                    href="#"
-                    class="back-to-top d-flex align-items-center justify-content-center"
-                    ><i class="bi bi-arrow-up-short"></i
-                ></a>
-        
+                    <div class="col-lg-3 col-md-6 content-item">
+                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2 " style="width: 105%;">KATEGORI
+                            2</div>
+
+                        <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="why-us" class="why-us">
+            <div class="container-fluid">
+                <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-6 content-item">
+                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light" style="width: 105%;">KATEGORI 3
+                        </div>
+
+                        <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
+                                style="width: 100%; margin-left: 20px;">
+                                <a class="card-petugas" href="">
+                                    <div class="row">
+                                        <div class="col-4 mt-3 mb-3">
+                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
+                                                alt="...">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body" style="width: 100%">
+                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
+                                                    sit amet consectetur adipisicing elit.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6  content-item">
+
+                        <div class="text-center">
+                            <img src="template/assets/img/team/team-1.jpg" width="80%" height="500px" alt="">
+                        </div>
+                        <h4 class="mt-4 fw-bold" style="font-size: 24px;">Lorem ipsum dolor sit amet</h4>
+                        <p style="margin-top: -2%;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
+                            harum ex explicabo distinctio, consectetur illo quibusdam blanditiis nostrum accusamus!
+                            Voluptatibus deserunt ea minus nostrum dolorum explicabo ipsa esse ipsum labore.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 content-item">
+                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light ">INSTAGRAM</div>
+
+                        <img src="template/assets/img/team/instagram.png" class="mt-2" alt="" width="100%"
+                            height="400px">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Why Us Section -->
+
+        <!-- ======= Our Clients Section ======= -->
+
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="container">
+                <h3>Green</h3>
+                <p>
+                    Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis
+                    magni eligendi fuga maxime saepe commodi placeat.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+                <div class="copyright">
+                    &copy; Copyright <strong><span>Green</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    <!-- All the links in the footer should remain intact. -->
+                    <!-- You can delete the links only if you purchased the pro version. -->
+                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/green-free-one-page-bootstrap-template/ -->
+                    Designed by
+                    <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
         <!-- Vendor JS Files -->
         <script src="{{ asset('template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('template/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>

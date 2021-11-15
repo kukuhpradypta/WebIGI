@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WebController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
+// Route::get('/', function () {
+//     return view('home');
+// });
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
