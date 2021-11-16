@@ -236,16 +236,7 @@
                 </div>
             </div>
         </section>
-        <!-- End Featured Services Section -->
 
-        <!-- ======= About Us Section ======= -->
-
-        <!-- End About Us Section -->
-
-        <!-- ======= Why Us Section ======= -->
-        <div class="col-lg-6 col-md-6 content-item">
-            @yield('content')
-        </div>
         <section id="why-us" class="why-us">
             <div class="container-fluid">
                 <div class="row no-gutters">
@@ -312,45 +303,11 @@
                     </div>
 
                     <div class="col-lg-6 col-md-6 content-item">
-                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2"
-                            style="width: 103%; margin-left: -11px;">ARTIKEL TERBARU</div>
-                        <div class="row">
-
-                            <div class="card col-lg-4 col-md-6 pe-2 ani">
-                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
-                                    height="170px">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and
-                                        make</p>
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-
-                            <div class="card col-lg-4 col-md-6 ps-2 ani">
-                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
-                                    height="170px">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and
-                                        make</p>
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-
-                            <div class="card col-lg-4 col-md-6 ps-2 ani">
-                                <img src="template/assets/img/team/team-1.jpg" class="ftk card-img-top pt-2" alt="..."
-                                    height="170px">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text mb-2">Some quick example text to build on the card title and
-                                        make</p>
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-
-                        </div>
+                        @yield('content')
                     </div>
+
+
+
                     <div class="col-lg-3 col-md-6 content-item">
                         <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2 " style="width: 105%;">KATEGORI
                             2</div>

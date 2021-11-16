@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
+
+
+use App\Models\Category;
+use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,11 +17,26 @@ use App\Http\Controllers\WebController;
 |
 */
 
-// Route::get('/', function () {
+// Route::get('/home', function () {
 //     return view('home');
 // });
 Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+Route::get('/showartikel/{id}', function ($id) {
+    // dd($id);
+    $articleShow = App\Models\Post::where('slug', $id)->first();
+    // dd($articleShow->author_id);
 
+    // dd($author);
+
+    return view('showartikel', compact('articleShow'));
+})->name('showartikel');
+Route::get('/artikel', function () {
+    
+    $article = App\Models\Post::where('status', 'PUBLISHED')->get();
+
+    return view('artikel', compact('article'));
+});
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
