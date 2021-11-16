@@ -246,59 +246,37 @@
 
                         <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
                             data-aos-delay="100">
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
+                            @forelse ($article1 as $artikel1)
+                                <a href="/showartikel/{{ $artikel1->slug }}">
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                        style="width: 100%; margin-left: 20px;">
+                                        <a class="card-petugas" href="">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel1->image)))
+                                                        <img src="{{ 'article-img/' . $artikel1->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel1->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p style="color: #5cb874">
+                                                            {{ Str::words($artikel1->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel1->excerpt, 25) }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </a>
-                            </div>
-
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
+                            @endforelse
                         </div>
                     </div>
 
@@ -314,63 +292,41 @@
 
                         <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
                             data-aos-delay="100">
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
 
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
+                            @forelse ($article2 as $artikel2)
+                                <a href="/showartikel/{{ $artikel2->slug }}">
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                        style="width: 100%; margin-left: 20px;">
+                                        <a class="card-petugas" href="">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel2->image)))
+                                                        <img src="{{ 'article-img/' . $artikel2->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel2->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p style="color: #5cb874">
+                                                            {{ Str::words($artikel2->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel2->excerpt, 25) }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </a>
+                                    @empty
+                                        <div class="btn btn-danger">
+                                            Tidak Ada Artikel
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
+                            @endforelse
                         </div>
+
                     </div>
                 </div>
+            </div>
             </div>
 
         </section>
@@ -384,59 +340,42 @@
 
                         <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
                             data-aos-delay="100">
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            @forelse ($article3 as $artikel3)
+                                <a href="/showartikel/{{ $artikel3->slug }}">
 
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
+                                        style="width: 100%; margin-left: 20px;">
+                                        <a class="card-petugas" href="">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel3->image)))
+                                                        <img src="{{ 'article-img/' . $artikel3->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel3->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p style="color: #5cb874">
+                                                            {{ Str::words($artikel3->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel3->excerpt, 25) }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </a>
-                            </div>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
+                            @endforelse
 
-                            <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
-                                style="width: 100%; margin-left: 20px;">
-                                <a class="card-petugas" href="">
-                                    <div class="row">
-                                        <div class="col-4 mt-3 mb-3">
-                                            <img src="template/assets/img/team/team-1.jpg" class="card-img-top"
-                                                alt="...">
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body" style="width: 100%">
-                                                <p class="card-text fw-bold" style="font-size: 12px">Lorem ipsum dolor
-                                                    sit amet consectetur adipisicing elit.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+
+
+
 
                         </div>
                     </div>
@@ -444,19 +383,32 @@
                     <div class="col-lg-6 col-md-6  content-item">
 
                         <div class="text-center">
-                            <img src="template/assets/img/team/team-1.jpg" width="80%" height="500px" alt="">
+                            @foreach ($settings as $item)
+                                @if ($item->display_name == 'Foto Igi')
+                                    <img src="{{ asset("storage/$item->value") }}" width="80%" height="500px" alt="">
+                                @endif
+                            @endforeach
                         </div>
-                        <h4 class="mt-4 fw-bold" style="font-size: 24px;">Lorem ipsum dolor sit amet</h4>
-                        <p style="margin-top: -2%;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto
-                            harum ex explicabo distinctio, consectetur illo quibusdam blanditiis nostrum accusamus!
-                            Voluptatibus deserunt ea minus nostrum dolorum explicabo ipsa esse ipsum labore.</p>
+                        @foreach ($settings as $item)
+                            @if ($item->display_name == 'Title Igi')
+                                <h4 class="mt-4 fw-bold" style="font-size: 24px;">{{ $item->value }}</h4>
+                            @endif
+                        @endforeach
+                        @foreach ($settings as $item)
+                            @if ($item->display_name == 'Content Igi')
+                                <p style="margin-top: -2%;">{{ $item->value }}</p>
+                            @endif
+                        @endforeach
                     </div>
 
                     <div class="col-lg-3 col-md-6 content-item">
                         <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light ">INSTAGRAM</div>
-
-                        <img src="template/assets/img/team/instagram.png" class="mt-2" alt="" width="100%"
-                            height="400px">
+                        @foreach ($settings as $item)
+                            @if ($item->display_name == 'Instagram Igi')
+                                <img src="{{ asset("storage/$item->value") }}" class="mt-2" alt=""
+                                    width="100%" height="400px">
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

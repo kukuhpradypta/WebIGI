@@ -5,20 +5,20 @@
     <div class="row">
         @forelse ($article as $artikel)
             <div class="card col-lg-4 col-md-6 pe-2 ani">
-                @if (file_exists(public_path('article-img/' . $artikel->image)))
-                    <img src="{{ 'article-img/' . $artikel->image }}" class="ftk card-img-top pt-2" alt="..."
-                        height="170px">
-                @else
-                    <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
-                        height="170px">
-                @endif
-                <div class="card-body">
-                    <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
-                    <p>{{ Str::words($artikel->excerpt, 25) }}</p>
-                    <p><a href="/showartikel/{{ $artikel->slug }}">Read More ...</a></p>
-                </div>
+                <a href="/showartikel/{{ $artikel->slug }}">
+                    @if (file_exists(public_path('article-img/' . $artikel->image)))
+                        <img src="{{ 'article-img/' . $artikel->image }}" class="ftk card-img-top pt-2" alt="..."
+                            height="170px">
+                    @else
+                        <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
+                            height="170px">
+                    @endif
+                    <div class="card-body">
+                        <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
+                        <p>{{ Str::words($artikel->excerpt, 25) }}</p>
+                    </div>
             </div>
-
+            </a>
         @empty
             <div class="btn btn-danger">
                 Tidak Ada Artikel
