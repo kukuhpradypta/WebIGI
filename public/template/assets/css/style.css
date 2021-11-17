@@ -362,6 +362,8 @@ h6 {
 }
 #hero .carousel-item::before {
     content: "";
+    opacity: 0.4;
+    filter: alpha(opacity=40);
     background-color: rgba(45, 103, 60, 0.8);
 }
 #hero .carousel-container {
@@ -396,7 +398,7 @@ h6 {
 #hero .carousel-inner .carousel-item,
 #hero .carousel-inner .active.carousel-item-start,
 #hero .carousel-inner .active.carousel-item-end {
-    opacity: 0;
+    opacity: 1;
 }
 #hero .carousel-inner .active,
 #hero .carousel-inner .carousel-item-next.carousel-item-start,

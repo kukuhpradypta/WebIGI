@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebController;
 
-
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Setting;
+use App\Models\Youtube;
+use App\Models\Slider;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,13 +27,17 @@ use App\Models\Post;
 Route::get('/', 'HomeController@index');
 // Route::get('/', 'HomeController@index');
 Route::get('/showartikel/{id}', function ($id) {
-    // dd($id);
+    $news = Post::where('status','PUBLISHED')->latest()->paginate(5);
+        $article = Post::where('status','PUBLISHED')->latest()->paginate(6);
+        $vidios = Youtube::all()->where('status', 'Active');
+        $posts = Post::all()->where('status','PUBLISHED');
+        $settings = Setting::all();
+         $sliders = Slider::all();
+        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->paginate(6);
+        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->paginate(6);
+        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->paginate(6);
     $articleShow = App\Models\Post::where('slug', $id)->first();
-    // dd($articleShow->author_id);
-
-    // dd($author);
-
-    return view('showartikel', compact('articleShow'));
+    return view('showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','settings'));
 })->name('showartikel');
 Route::get('/artikel', function () {
     

@@ -78,7 +78,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
-                        <a class="nav-link scrollto active" href="#hero">Home</a>
+                        <a class="nav-link scrollto active" href="/">Home</a>
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="#about">Keilmuan Geografi</a>
@@ -108,112 +108,42 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero">
-        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+        @if (!request()->is('/registalum'))
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-            <div class="carousel-inner" role="listbox">
-                <!-- Slide 1 -->
-                <div class="carousel-item active" style="
-                            background-image: url({{ asset('template/assets/img/slide/slide-1.jpg') }});
-                        ">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2
-                                class="
+                <div class="carousel-inner" role="listbox">
+                    <!-- Slide 1 -->
+                    @foreach ($sliders as $key => $bg)
+                        <div class="carousel-item  {{ $key == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('storage/' . $bg->image) }}" class="d-block" alt="...">
+                            <div class="carousel-container">
+                                <div class="container">
+                                    <h2
+                                        class="
                                         animate__animated animate__fadeInDown
                                     ">
-                                Welcome to <span>Green</span>
-                            </h2>
-                            <p class="animate__animated animate__fadeInUp">
-                                Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi
-                                nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse
-                                doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.
-                            </p>
-                            <a href="#about"
-                                class="
-                                        btn-get-started
-                                        animate__animated animate__fadeInUp
-                                        scrollto
-                                    ">Read
-                                More</a>
+                                        {{ $bg->title }}
+                                    </h2>
+                                    <p class="animate__animated animate__fadeInUp">
+                                        {{ $bg->content }}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
+
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="carousel-item" style="
-                            background-image: url({{ asset('template/assets/img/slide/slide-2.jpg') }});
-                        ">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2
-                                class="
-                                        animate__animated animate__fadeInDown
-                                    ">
-                                Lorem Ipsum Dolor
-                            </h2>
-                            <p class="animate__animated animate__fadeInUp">
-                                Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi
-                                nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse
-                                doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.
-                            </p>
-                            <a href="#about"
-                                class="
-                                        btn-get-started
-                                        animate__animated animate__fadeInUp
-                                        scrollto
-                                    ">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
 
-                <!-- Slide 3 -->
-                <div class="carousel-item" style="
-                            background-image: url({{ asset('template/assets/img/slide/slide-3.jpg') }});
-                        ">
-                    <div class="carousel-container">
-                        <div class="container">
-                            <h2
-                                class="
-                                        animate__animated animate__fadeInDown
-                                    ">
-                                Sequi ea ut et est quaerat
-                            </h2>
-                            <p class="animate__animated animate__fadeInUp">
-                                Ut velit est quam dolor ad a aliquid qui
-                                aliquid. Sequi ea ut et est quaerat sequi
-                                nihil ut aliquam. Occaecati alias dolorem
-                                mollitia ut. Similique ea voluptatem. Esse
-                                doloremque accusamus repellendus deleniti
-                                vel. Minus et tempore modi architecto.
-                            </p>
-                            <a href="#about"
-                                class="
-                                        btn-get-started
-                                        animate__animated animate__fadeInUp
-                                        scrollto
-                                    ">Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
             </div>
-
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
-            </a>
-
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
-            </a>
-        </div>
+        @endif
     </section>
     <!-- End Hero -->
 
@@ -241,16 +171,17 @@
             <div class="container-fluid">
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-6 content-item">
-                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2" style="width: 105%;">KATEGORI 1
+                        <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
+                            style="width: 105%;">KATEGORI 1
                         </div>
 
                         <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
                             data-aos-delay="100">
                             @forelse ($article1 as $artikel1)
-                                <a href="/showartikel/{{ $artikel1->slug }}">
-                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                        style="width: 100%; margin-left: 20px;">
-                                        <a class="card-petugas" href="">
+                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                    style="width: 100%; margin-left: 20px;">
+                                    <a href="/showartikel/{{ $artikel1->slug }}">
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel1->slug }}">
                                             <div class="row">
                                                 <div class="col-4 mt-3 mb-3">
                                                     @if (file_exists(public_path('article-img/' . $artikel1->image)))
@@ -270,7 +201,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>
+                                </div>
                                 </a>
                             @empty
                                 <div class="btn btn-danger">
@@ -287,17 +218,18 @@
 
 
                     <div class="col-lg-3 col-md-6 content-item">
-                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2 " style="width: 105%;">KATEGORI
+                        <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2 "
+                            style="width: 105%;">KATEGORI
                             2</div>
 
                         <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
                             data-aos-delay="100">
 
                             @forelse ($article2 as $artikel2)
-                                <a href="/showartikel/{{ $artikel2->slug }}">
-                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                        style="width: 100%; margin-left: 20px;">
-                                        <a class="card-petugas" href="">
+                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                    style="width: 100%; margin-left: 20px;">
+                                    <a href="/showartikel/{{ $artikel2->slug }}">
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel2->slug }}">
                                             <div class="row">
                                                 <div class="col-4 mt-3 mb-3">
                                                     @if (file_exists(public_path('article-img/' . $artikel2->image)))
@@ -317,10 +249,12 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    @empty
-                                        <div class="btn btn-danger">
-                                            Tidak Ada Artikel
-                                        </div>
+                                </div>
+                                </a>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
                             @endforelse
                         </div>
 
@@ -331,21 +265,21 @@
 
         </section>
 
-        <section id="why-us" class="why-us">
+        <section id="why-us" class="why-us mb-5">
             <div class="container-fluid">
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-6 content-item">
-                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light" style="width: 105%;">KATEGORI 3
+                        <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light"
+                            style="width: 105%;">KATEGORI 3
                         </div>
 
                         <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
                             data-aos-delay="100">
                             @forelse ($article3 as $artikel3)
-                                <a href="/showartikel/{{ $artikel3->slug }}">
-
-                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
-                                        style="width: 100%; margin-left: 20px;">
-                                        <a class="card-petugas" href="">
+                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
+                                    style="width: 100%; margin-left: 20px;">
+                                    <a href="/showartikel/{{ $artikel3->slug }}">
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel3->slug }}">
                                             <div class="row">
                                                 <div class="col-4 mt-3 mb-3">
                                                     @if (file_exists(public_path('article-img/' . $artikel3->image)))
@@ -365,7 +299,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    </div>
+                                </div>
                                 </a>
                             @empty
                                 <div class="btn btn-danger">
@@ -402,7 +336,8 @@
                     </div>
 
                     <div class="col-lg-3 col-md-6 content-item">
-                        <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light ">INSTAGRAM</div>
+                        <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light ">INSTAGRAM
+                        </div>
                         @foreach ($settings as $item)
                             @if ($item->display_name == 'Instagram Igi')
                                 <img src="{{ asset("storage/$item->value") }}" class="mt-2" alt=""
