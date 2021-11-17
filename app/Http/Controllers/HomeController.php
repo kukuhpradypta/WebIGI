@@ -13,22 +13,22 @@ class HomeController extends Controller
 {
         public function index()
     {
-        $news = Post::where('status','PUBLISHED')->latest()->paginate(5);
+        $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
         $article = Post::where('status','PUBLISHED')->latest()->paginate(6);
         $vidios = Youtube::all()->where('status', 'Active');
         $posts = Post::all()->where('status','PUBLISHED');
         $settings = Setting::all();
         $sliders = Slider::all();
-        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->paginate(6);
-        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->paginate(6);
-        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->paginate(6);
+        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
+        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
+        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
         return view('home', compact('vidios','article','posts','news','article1','article2','article3','settings','sliders'));
     }
     
     public function homeigi()
     {
          $sliders = Slider::all();
- $news = Post::where('status','PUBLISHED')->latest()->paginate(5);
+ $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
         $article = Post::where('status','PUBLISHED')->latest()->paginate(6);
         $vidios = Youtube::all()->where('status', 'Active');
         $posts = Post::all()->where('status','PUBLISHED');

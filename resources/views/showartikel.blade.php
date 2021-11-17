@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <div class="bg-primary col-12 py-2 ps-3 fw-bold text-light mb-2" style="width: 103%; margin-left: -11px;">Detail
+    <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
+        style="width: 103%; margin-left: -11px;">Detail
         Artikel
     </div>
     <h3><b>{{ $articleShow->title }}</b></h3>

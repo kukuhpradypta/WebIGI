@@ -27,23 +27,31 @@ use App\Models\Slider;
 Route::get('/', 'HomeController@index');
 // Route::get('/', 'HomeController@index');
 Route::get('/showartikel/{id}', function ($id) {
-    $news = Post::where('status','PUBLISHED')->latest()->paginate(5);
+    $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
         $article = Post::where('status','PUBLISHED')->latest()->paginate(6);
         $vidios = Youtube::all()->where('status', 'Active');
         $posts = Post::all()->where('status','PUBLISHED');
         $settings = Setting::all();
          $sliders = Slider::all();
-        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->paginate(6);
-        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->paginate(6);
-        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->paginate(6);
+        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
+        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
+        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
     $articleShow = App\Models\Post::where('slug', $id)->first();
     return view('showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','settings'));
 })->name('showartikel');
 Route::get('/artikel', function () {
     
-    $article = App\Models\Post::where('status', 'PUBLISHED')->get();
+       $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
+        $article = Post::where('status','PUBLISHED')->latest()->paginate(10);
+        $vidios = Youtube::all()->where('status', 'Active');
+        $posts = Post::all()->where('status','PUBLISHED');
+        $settings = Setting::all();
+         $sliders = Slider::all();
+        $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
+        $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
+        $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
 
-    return view('artikel', compact('article'));
+    return view('artikel', compact('vidios','article','posts','news','article1','article2','sliders','article3','settings'));
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

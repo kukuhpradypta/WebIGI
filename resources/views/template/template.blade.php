@@ -213,8 +213,8 @@
 
                     <div class="col-lg-6 col-md-6 content-item">
                         @yield('content')
+                        @yield('loadmore')
                     </div>
-
 
 
                     <div class="col-lg-3 col-md-6 content-item">
@@ -316,23 +316,7 @@
 
                     <div class="col-lg-6 col-md-6  content-item">
 
-                        <div class="text-center">
-                            @foreach ($settings as $item)
-                                @if ($item->display_name == 'Foto Igi')
-                                    <img src="{{ asset("storage/$item->value") }}" width="80%" height="500px" alt="">
-                                @endif
-                            @endforeach
-                        </div>
-                        @foreach ($settings as $item)
-                            @if ($item->display_name == 'Title Igi')
-                                <h4 class="mt-4 fw-bold" style="font-size: 24px;">{{ $item->value }}</h4>
-                            @endif
-                        @endforeach
-                        @foreach ($settings as $item)
-                            @if ($item->display_name == 'Content Igi')
-                                <p style="margin-top: -2%;">{{ $item->value }}</p>
-                            @endif
-                        @endforeach
+                        @yield('content2')
                     </div>
 
                     <div class="col-lg-3 col-md-6 content-item">

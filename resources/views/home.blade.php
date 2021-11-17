@@ -15,6 +15,8 @@
                             height="170px">
                     @endif
                     <div class="card-body">
+                        <p class="artikel ps-3" style="background-color: #5cb874;color:white;width:65%;">
+                            {{ $artikel->category->name }}</p>
                         <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
                         <p>{{ Str::words($artikel->excerpt, 25) }}</p>
                     </div>
@@ -26,15 +28,37 @@
             </div>
         @endforelse
     </div>
+
 @endsection
-@foreach ($posts as $key => $item)
-    @if ($key == 6)
-        <div class="container">
-            <div class="text-center">
-                <a href="/artikel" class="btn btn-outline-primary pe-5 ps-5 mb-5" style="border-radius: 50px">Load
-                    More
-                    ...</a>
+@section('loadmore')
+    @foreach ($posts as $key => $item)
+        @if ($key == 6)
+            <div class="container">
+                <div class="text-center">
+                    <a href="/artikel" class="btn btn-outline-success pe-5 ps-5 mt-4" style="border-radius: 50px">Load
+                        More
+                        ...</a>
+                </div>
             </div>
-        </div>
-    @endif
-@endforeach
+        @endif
+    @endforeach
+@endsection
+@section('content2')
+    <div class="text-center">
+        @foreach ($settings as $item)
+            @if ($item->display_name == 'Foto Igi')
+                <img src="{{ asset("storage/$item->value") }}" width="80%" height="500px" alt="">
+            @endif
+        @endforeach
+    </div>
+    @foreach ($settings as $item)
+        @if ($item->display_name == 'Title Igi')
+            <h4 class="mt-4 fw-bold" style="font-size: 24px;">{{ $item->value }}</h4>
+        @endif
+    @endforeach
+    @foreach ($settings as $item)
+        @if ($item->display_name == 'Content Igi')
+            <p style="margin-top: -2%;">{{ $item->value }}</p>
+        @endif
+    @endforeach
+@endsection
