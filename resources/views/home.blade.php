@@ -1,7 +1,7 @@
 @extends('template.template')
 @section('content')
     <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-        style="width: 103%; margin-left: -11px;">ARTIKEL TERBARU
+        style="width: 103%; margin-left: -11px;">Artikel Terbaru
     </div>
     <div class="row">
         @forelse ($article as $artikel)
@@ -15,7 +15,7 @@
                             height="170px">
                     @endif
                     <div class="card-body">
-                        <p class="artikel ps-3" style="background-color: #5cb874;color:white;width:65%;">
+                        <p class="artikel text-center mb-2 " style="background-color: #5cb874;color:white; width:100%;">
                             {{ $artikel->category->name }}</p>
                         <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
                         <p>{{ Str::words($artikel->excerpt, 25) }}</p>
@@ -43,6 +43,7 @@
         @endif
     @endforeach
 @endsection
+<br>
 @section('content2')
     <div class="text-center">
         @foreach ($settings as $item)

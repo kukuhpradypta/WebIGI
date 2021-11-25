@@ -36,8 +36,10 @@ Route::get('/showartikel/{id}', function ($id) {
         $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
         $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
         $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
+        $article4 = Post::where('status','PUBLISHED')->where('category_id','6')->latest()->paginate(3);
+        $article5 = Post::where('status','PUBLISHED')->where('category_id','7')->latest()->paginate(3);
     $articleShow = App\Models\Post::where('slug', $id)->first();
-    return view('showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','settings'));
+    return view('showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
 })->name('showartikel');
 Route::get('/artikel', function () {
     
@@ -50,8 +52,10 @@ Route::get('/artikel', function () {
         $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
         $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
         $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
+        $article4 = Post::where('status','PUBLISHED')->where('category_id','6')->latest()->paginate(3);
+        $article5 = Post::where('status','PUBLISHED')->where('category_id','7')->latest()->paginate(3);
 
-    return view('artikel', compact('vidios','article','posts','news','article1','article2','sliders','article3','settings'));
+    return view('artikel', compact('vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

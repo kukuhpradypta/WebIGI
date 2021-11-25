@@ -22,7 +22,9 @@ class HomeController extends Controller
         $article1 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
         $article2 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
         $article3 = Post::where('status','PUBLISHED')->where('category_id','5')->latest()->paginate(3);
-        return view('home', compact('vidios','article','posts','news','article1','article2','article3','settings','sliders'));
+        $article4 = Post::where('status','PUBLISHED')->where('category_id','6')->latest()->paginate(3);
+        $article5 = Post::where('status','PUBLISHED')->where('category_id','7')->latest()->paginate(3);
+        return view('home', compact('vidios','article','posts','news','article1','article2','article3','article4','article5','settings','sliders'));
     }
     
     public function homeigi()

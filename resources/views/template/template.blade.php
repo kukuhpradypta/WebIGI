@@ -175,7 +175,7 @@
 
                         <div class="col-12">
                             <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-                                style="width: 105%;">KATEGORI 1
+                                style="width: 105%;">Keilmuan Geografi
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -214,8 +214,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light"
-                                style="width: 105%;">KATEGORI 3
+                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
+                                style="width: 105%;">Informasi Keprofesian
                             </div>
 
                             <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
@@ -253,6 +253,46 @@
                                 @endforelse
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
+                                style="width: 105%;">Keanggotaan
+                            </div>
+
+                            <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            @forelse ($article5 as $artikel5)
+                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                    style="width: 100%; margin-left: 20px;">
+                                    <a href="/showartikel/{{ $artikel5->slug }}">
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel5->slug }}">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel5->image)))
+                                                        <img src="{{ 'article-img/' . $artikel5->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel5->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p style="color: #5cb874">
+                                                            {{ Str::words($artikel5->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel5->excerpt, 25) }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </div>
+                                </a>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
+                            @endforelse
+                        </div>
+                    </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6 content-item">
@@ -270,7 +310,8 @@
 
                         <div class="col-12">
                             <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2 "
-                                style="width: 105%;">KATEGORI 2</div>
+                                style="width: 105%;">PTN/PTS Geografi
+                            </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
                                 data-aos-delay="100">
@@ -309,7 +350,47 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light ">
+                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
+                                style="width: 105%;">Kegiatan IGI
+                            </div>
+    
+                            <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            @forelse ($article4 as $artikel4)
+                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                    style="width: 100%; margin-left: 20px;">
+                                    <a href="/showartikel/{{ $artikel4->slug }}">
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel4->slug }}">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel4->image)))
+                                                        <img src="{{ 'article-img/' . $artikel4->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel4->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p style="color: #5cb874">
+                                                            {{ Str::words($artikel4->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel4->excerpt, 25) }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </div>
+                                </a>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
+                            @endforelse
+                        </div>
+                    </div>
+                        <div class="col-12">
+                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-1">
                                 INSTAGRAM
                             </div>
                             @foreach ($settings as $item)
@@ -334,7 +415,7 @@
         <!-- ======= Footer ======= -->
         <footer id="footer">
             <div class="container">
-                <h3>Green</h3>
+                <h3>Ikatan Geograf Indonesia</h3>
                 <p>
                     Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis
                     magni eligendi fuga maxime saepe commodi placeat.
