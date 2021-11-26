@@ -2,15 +2,11 @@
 
 @section('content')
 
-    <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-        style="width: 103%; margin-left: -11px;">Detail
-        Artikel
+    <div style="background-color: #5cb874" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+    style="width: 103%; margin-left: -11px;">DETAIL ARTIKEL 
     </div>
     <h3><b>{{ $articleShow->title }}</b></h3>
     <hr>
-    <td>
-        <br>
-    </td>
     <p>
         Posted in <a href="/category/{{ $articleShow->category->slug }}">{{ $articleShow->category->name }}</a>
         | {{ $articleShow->created_at->diffForHumans() }}

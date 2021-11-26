@@ -13,6 +13,11 @@
     <link href="{{ asset('template/assets/img/favicon.png') }}" rel="icon" />
     <link href="{{ asset('template/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon" />
 
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -65,7 +70,7 @@
     </style>
 </head>
 
-<body>
+<body style="font-family: 'Poppins', sans-serif;">
     <!-- ======= Top Bar ======= -->
 
     <!-- ======= Header ======= -->
@@ -78,7 +83,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
-                        <a class="nav-link scrollto active" href="/">Home</a>
+                        <a class="nav-link scrollto active"  href="/">Home</a>
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="#about">Keilmuan Geografi</a>
@@ -174,8 +179,8 @@
 
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-                                style="width: 105%;">Keilmuan Geografi
+                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
+                                >KEILMUAN GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -214,8 +219,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-                                style="width: 105%;">Informasi Keprofesian
+                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                                >INFORMASI KEPROFESIAN
                             </div>
 
                             <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
@@ -254,8 +259,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-                                style="width: 105%;">Keanggotaan
+                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                            >KEANGGOTAAN
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -309,8 +314,8 @@
                     <div class="col-lg-3 col-md-6 content-item">
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2 "
-                                style="width: 105%;">PTN/PTS Geografi
+                            <div style="background-color: #5cb874;width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
+                                >PTN/PTS GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -350,8 +355,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-2"
-                                style="width: 105%;">Kegiatan IGI
+                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                                >KEGIATAN IGI
                             </div>
     
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -390,7 +395,7 @@
                         </div>
                     </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874" class=" col-12 py-2 ps-3 fw-bold text-light mb-1">
+                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-1">
                                 INSTAGRAM
                             </div>
                             @foreach ($settings as $item)
