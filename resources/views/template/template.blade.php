@@ -156,7 +156,7 @@
         <!-- ======= Featured Services Section ======= -->
         
         <section id="featured-services" class="featured-services section-bg">
-            <div style="background-color: #5cb874; width: 1430px; margin-bottom:-35px;" class="mt-3 text-center col-12 fw-bold ms-5 py-2 text-light"
+            <div style="background-color: #5cb874; width: 1430px; margin-bottom:-35px;" class="mt-5 text-center col-12 fw-bold ms-5 py-2 text-light"
                 >YOUTUBE IGI CHANNEL
             </div>  
             <div class="container-fluid p-5">
