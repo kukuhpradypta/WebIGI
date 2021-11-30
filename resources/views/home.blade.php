@@ -13,10 +13,11 @@
                     @else
                         <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
                             height="170px">
+                        <p class="col-12 artikel text-center pt-1 pb-1"
+                            style="background-color: #5cb874; color:white; font-size: 15px;">
+                            {{ $artikel->category->name }}</p>
                     @endif
                     <div class="card-body">
-                        <p class="artikel text-center mb-2 pt-1 pb-1" style="background-color: #5cb874; color:white; width:213px; font-size: 15px; margin-top: -15px; margin-left: -15px;">
-                            {{ $artikel->category->name }}</p>
                         <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
                         <p>{{ Str::words($artikel->excerpt, 25) }}</p>
                     </div>

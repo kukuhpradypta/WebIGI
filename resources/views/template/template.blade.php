@@ -83,7 +83,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
-                        <a class="nav-link scrollto active"  href="/">Home</a>
+                        <a class="nav-link scrollto active" href="/">Home</a>
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="#about">Keilmuan Geografi</a>
@@ -154,26 +154,26 @@
 
     <main id="main">
         <!-- ======= Featured Services Section ======= -->
-        
-        <section id="featured-services" class="featured-services section-bg">
-            <div style="background-color: #5cb874; width: 1430px; margin-bottom:-35px;" class="mt-3 text-center col-12 fw-bold ms-5 py-2 text-light"
-                >YOUTUBE IGI CHANNEL
-            </div>  
-            <div class="container-fluid p-5">
-                <div class="row no-gutters">
-                    @foreach ($vidios as $vidio)
 
-
-                        <div class="col-lg-4 col-md-6">
-                            <iframe width="100%" height="250" src="{{ $vidio->vidio }}" title="YouTube video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-
-                        </div>
-                    @endforeach
-                </div>
+        <section id="featured-services" class="container-fluid p-5 featured-services section-bg">
+            <div style="background-color: #5cb874;" class="mt-1 mb-3 text-center col-12 fw-bold py-2 text-light">YOUTUBE
+                IGI CHANNEL
             </div>
+
+            <div class="row no-gutters">
+                @foreach ($vidios as $vidio)
+
+
+                    <div class="col-lg-4 col-md-6">
+                        <iframe width="100%" height="250" src="{{ $vidio->vidio }}" title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+
+                    </div>
+                @endforeach
+            </div>
+
         </section>
 
         <section id="why-us" class="why-us">
@@ -183,8 +183,8 @@
 
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
-                                >KEILMUAN GEOGRAFI
+                            <div style="background-color: #5cb874;"
+                                class="mt-3 text-center col-12 fw-bold py-2 text-light mb-2">KEILMUAN GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -223,8 +223,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
-                                >INFORMASI KEPROFESIAN
+                            <div style="background-color: #5cb874;"
+                                class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2">INFORMASI KEPROFESIAN
                             </div>
 
                             <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
@@ -263,45 +263,45 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
-                            >KEANGGOTAAN
+                            <div style="background-color: #5cb874;"
+                                class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2">KEANGGOTAAN
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
-                            data-aos-delay="100">
-                            @forelse ($article5 as $artikel5)
-                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                    style="width: 100%; margin-left: 20px;">
-                                    <a href="/showartikel/{{ $artikel5->slug }}">
-                                        <a class="card-petugas" href="/showartikel/{{ $artikel5->slug }}">
-                                            <div class="row">
-                                                <div class="col-4 mt-3 mb-3">
-                                                    @if (file_exists(public_path('article-img/' . $artikel5->image)))
-                                                        <img src="{{ 'article-img/' . $artikel5->image }}"
-                                                            class="card-img-top" alt="...">
-                                                    @else
-                                                        <img src="{{ asset('storage/' . $artikel5->image) }}"
-                                                            class="card-img-top" alt="...">
-                                                    @endif
-                                                </div>
-                                                <div class="col-8">
-                                                    <div class="card-body" style="width: 100%">
-                                                        <p style="color: #5cb874">
-                                                            {{ Str::words($artikel5->title, 5) }}</p>
-                                                        <p>{{ Str::words($artikel5->excerpt, 25) }}</p>
+                                data-aos-delay="100">
+                                @forelse ($article5 as $artikel5)
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                        style="width: 100%; margin-left: 20px;">
+                                        <a href="/showartikel/{{ $artikel5->slug }}">
+                                            <a class="card-petugas" href="/showartikel/{{ $artikel5->slug }}">
+                                                <div class="row">
+                                                    <div class="col-4 mt-3 mb-3">
+                                                        @if (file_exists(public_path('article-img/' . $artikel5->image)))
+                                                            <img src="{{ 'article-img/' . $artikel5->image }}"
+                                                                class="card-img-top" alt="...">
+                                                        @else
+                                                            <img src="{{ asset('storage/' . $artikel5->image) }}"
+                                                                class="card-img-top" alt="...">
+                                                        @endif
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="card-body" style="width: 100%">
+                                                            <p style="color: #5cb874">
+                                                                {{ Str::words($artikel5->title, 5) }}</p>
+                                                            <p>{{ Str::words($artikel5->excerpt, 25) }}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                </div>
-                                </a>
-                            @empty
-                                <div class="btn btn-danger">
-                                    Tidak Ada Artikel
-                                </div>
-                            @endforelse
+                                            </a>
+                                    </div>
+                                    </a>
+                                @empty
+                                    <div class="btn btn-danger">
+                                        Tidak Ada Artikel
+                                    </div>
+                                @endforelse
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                     <div class="col-lg-6 col-md-6 content-item">
@@ -318,8 +318,8 @@
                     <div class="col-lg-3 col-md-6 content-item">
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874;width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
-                                >PTN/PTS GEOGRAFI
+                            <div style="background-color: #5cb874"
+                                class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2 ">PTN/PTS GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -359,47 +359,48 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
-                                >KEGIATAN IGI
+                            <div style="background-color: #5cb874;"
+                                class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2">KEGIATAN IGI
                             </div>
-    
+
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
-                            data-aos-delay="100">
-                            @forelse ($article4 as $artikel4)
-                                <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
-                                    style="width: 100%; margin-left: 20px;">
-                                    <a href="/showartikel/{{ $artikel4->slug }}">
-                                        <a class="card-petugas" href="/showartikel/{{ $artikel4->slug }}">
-                                            <div class="row">
-                                                <div class="col-4 mt-3 mb-3">
-                                                    @if (file_exists(public_path('article-img/' . $artikel4->image)))
-                                                        <img src="{{ 'article-img/' . $artikel4->image }}"
-                                                            class="card-img-top" alt="...">
-                                                    @else
-                                                        <img src="{{ asset('storage/' . $artikel4->image) }}"
-                                                            class="card-img-top" alt="...">
-                                                    @endif
-                                                </div>
-                                                <div class="col-8">
-                                                    <div class="card-body" style="width: 100%">
-                                                        <p style="color: #5cb874">
-                                                            {{ Str::words($artikel4->title, 5) }}</p>
-                                                        <p>{{ Str::words($artikel4->excerpt, 25) }}</p>
+                                data-aos-delay="100">
+                                @forelse ($article4 as $artikel4)
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
+                                        style="width: 100%; margin-left: 20px;">
+                                        <a href="/showartikel/{{ $artikel4->slug }}">
+                                            <a class="card-petugas" href="/showartikel/{{ $artikel4->slug }}">
+                                                <div class="row">
+                                                    <div class="col-4 mt-3 mb-3">
+                                                        @if (file_exists(public_path('article-img/' . $artikel4->image)))
+                                                            <img src="{{ 'article-img/' . $artikel4->image }}"
+                                                                class="card-img-top" alt="...">
+                                                        @else
+                                                            <img src="{{ asset('storage/' . $artikel4->image) }}"
+                                                                class="card-img-top" alt="...">
+                                                        @endif
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="card-body" style="width: 100%">
+                                                            <p style="color: #5cb874">
+                                                                {{ Str::words($artikel4->title, 5) }}</p>
+                                                            <p>{{ Str::words($artikel4->excerpt, 25) }}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </a>
-                                </div>
-                                </a>
-                            @empty
-                                <div class="btn btn-danger">
-                                    Tidak Ada Artikel
-                                </div>
-                            @endforelse
+                                            </a>
+                                    </div>
+                                    </a>
+                                @empty
+                                    <div class="btn btn-danger">
+                                        Tidak Ada Artikel
+                                    </div>
+                                @endforelse
+                            </div>
                         </div>
-                    </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-1">
+                            <div style="background-color: #5cb874;"
+                                class="mt-3 col-12 py-2 text-center fw-bold text-light mb-1">
                                 INSTAGRAM
                             </div>
                             @foreach ($settings as $item)
