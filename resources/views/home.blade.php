@@ -1,7 +1,11 @@
 @extends('template.template')
 @section('content')
+<<<<<<< HEAD
     <div style="background-color: #5cb874; margin-left: -11px;" class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
         >ARTIKEL TERBARU
+=======
+    <div style="background-color: #5cb874; " class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2">ARTIKEL TERBARU
+>>>>>>> 9256f3e30f49de9eef57238c0b142c35800a1c54
     </div>
     <div class="row">
         @forelse ($article as $artikel)
@@ -13,7 +17,12 @@
                     @else
                         <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
                             height="170px">
+<<<<<<< HEAD
                         <p class="artikel text-center mb-2 pt-1 pb-1" style="background-color: #5cb874; color:white; font-size: 15px;">
+=======
+                        <p class="col-12 artikel text-center pt-1 pb-1"
+                            style="background-color: #5cb874; color:white; font-size: 15px;">
+>>>>>>> 9256f3e30f49de9eef57238c0b142c35800a1c54
                             {{ $artikel->category->name }}</p>
                     @endif
                     <div class="card-body">
