@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('content')
-    <div style="background-color: #5cb874" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+    <div style="background-color: #5cb874; width: 700px; margin-left: -11px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
         style="width: 103%; margin-left: -11px;">SEMUA ARTIKEL
     </div>
     <div class="row">

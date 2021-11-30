@@ -156,9 +156,11 @@
         <!-- ======= Featured Services Section ======= -->
         
         <section id="featured-services" class="featured-services section-bg">
-            <div style="background-color: #5cb874; width: 1430px; margin-bottom:-35px;" class="mt-5 text-center col-12 fw-bold ms-5 py-2 text-light"
-                >YOUTUBE IGI CHANNEL
-            </div>  
+            <div class="container">
+                <div style="background-color: #5cb874; margin-bottom:-35px;" class="mt-5 text-center col-12 fw-bold py-2 text-light"
+                    >YOUTUBE IGI CHANNEL
+                </div>
+            
             <div class="container-fluid p-5">
                 <div class="row no-gutters">
                     @foreach ($vidios as $vidio)
@@ -174,6 +176,7 @@
                     @endforeach
                 </div>
             </div>
+        </div>  
         </section>
 
         <section id="why-us" class="why-us">
@@ -183,7 +186,7 @@
 
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
+                            <div style="background-color: #5cb874;" class="ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
                                 >KEILMUAN GEOGRAFI
                             </div>
 
@@ -223,14 +226,14 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                            <div style="background-color: #5cb874;" class="ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
                                 >INFORMASI KEPROFESIAN
                             </div>
 
                             <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
                                 data-aos-delay="100">
                                 @forelse ($article3 as $artikel3)
-                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 mt-2"
+                                    <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2"
                                         style="width: 100%; margin-left: 20px;">
                                         <a href="/showartikel/{{ $artikel3->slug }}">
                                             <a class="card-petugas" href="/showartikel/{{ $artikel3->slug }}">
@@ -263,7 +266,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                            <div style="background-color: #5cb874;" class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
                             >KEANGGOTAAN
                             </div>
 
@@ -318,7 +321,7 @@
                     <div class="col-lg-3 col-md-6 content-item">
 
                         <div class="col-12">
-                            <div style="background-color: #5cb874;width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
+                            <div style="background-color: #5cb874;" class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
                                 >PTN/PTS GEOGRAFI
                             </div>
 
@@ -359,7 +362,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                            <div style="background-color: #5cb874; " class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
                                 >KEGIATAN IGI
                             </div>
     
@@ -399,7 +402,7 @@
                         </div>
                     </div>
                         <div class="col-12">
-                            <div style="background-color: #5cb874; width: 310px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-1">
+                            <div style="background-color: #5cb874; " class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-1">
                                 INSTAGRAM
                             </div>
                             @foreach ($settings as $item)
