@@ -1,11 +1,7 @@
 @extends('template.template')
 @section('content')
-<<<<<<< HEAD
-    <div style="background-color: #5cb874; margin-left: -11px;" class="ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+    <div style="margin-left: -11px;" class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
         >ARTIKEL TERBARU
-=======
-    <div style="background-color: #5cb874; " class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2">ARTIKEL TERBARU
->>>>>>> 9256f3e30f49de9eef57238c0b142c35800a1c54
     </div>
     <div class="row">
         @forelse ($article as $artikel)
@@ -17,16 +13,11 @@
                     @else
                         <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
                             height="170px">
-<<<<<<< HEAD
-                        <p class="artikel text-center mb-2 pt-1 pb-1" style="background-color: #5cb874; color:white; font-size: 15px;">
-=======
-                        <p class="col-12 artikel text-center pt-1 pb-1"
-                            style="background-color: #5cb874; color:white; font-size: 15px;">
->>>>>>> 9256f3e30f49de9eef57238c0b142c35800a1c54
+                        <p class="bg-primary artikel text-center mb-2 pt-1 pb-1" style="color:white; font-size: 12px;">
                             {{ $artikel->category->name }}</p>
                     @endif
                     <div class="card-body">
-                        <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
+                        <a class="fw-bold" style="color: #0F00FF;" href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
                         <p>{{ Str::words($artikel->excerpt, 25) }}</p>
                     </div>
             </div>
@@ -44,7 +35,7 @@
         @if ($key == 6)
             <div class="container">
                 <div class="text-center">
-                    <a href="/artikel" class="btn btn-outline-success pe-5 ps-5 mt-4" style="border-radius: 50px">Load
+                    <a href="/artikel" class="btn btn-outline-primary pe-5 ps-5 mt-4" style="border-radius: 50px">Load
                         More
                         ...</a>
                 </div>

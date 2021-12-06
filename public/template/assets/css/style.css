@@ -170,21 +170,21 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-    color: #5cb874;
+    color: #0F00FF;
 }
 .navbar .getstarted,
 .navbar .getstarted:focus {
-    color: #5cb874;
+    color: #0F00FF;
     padding: 8px 25px;
     margin-left: 30px;
     border-radius: 4px;
-    border: 2px solid #5cb874;
+    border: 2px solid #0F00FF;
     transition: 0.3s;
     font-size: 14px;
 }
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
-    background: #5cb874;
+    background: #0F00FF;
     color: #fff;
 }
 .navbar .dropdown ul {
@@ -362,9 +362,9 @@ h6 {
 }
 #hero .carousel-item::before {
     content: "";
-    opacity: 0.4;
+    opacity: 0.2;
     filter: alpha(opacity=40);
-    background-color: rgba(45, 103, 60, 0.8);
+    background-color: #88E0EF;
 }
 #hero .carousel-container {
     display: flex;
@@ -441,7 +441,7 @@ h6 {
 }
 #hero .carousel-indicators li.active {
     opacity: 1;
-    background: #5cb874;
+    background: #0F00FF;
 }
 #hero .btn-get-started {
     font-family: "Raleway", sans-serif;
@@ -1284,4 +1284,5 @@ section {
 }
 #footer .credits {
     font-size: 13px;
+    
 }

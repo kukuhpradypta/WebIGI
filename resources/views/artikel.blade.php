@@ -1,7 +1,7 @@
 @extends('template.template')
 
 @section('content')
-    <div style="background-color: #5cb874; width: 700px; margin-left: -11px;" class="mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+    <div class="bg-primary mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
         style="width: 103%; margin-left: -11px;">SEMUA ARTIKEL
     </div>
     <div class="row">
@@ -16,9 +16,10 @@
                             height="170px">
                     @endif
                     <div class="card-body">
-                        <p class="artikel text-center mb-2 pt-1 pb-1" style="background-color: #5cb874; color:white; width:213px; font-size: 15px; margin-top: -15px; margin-left: -15px;">
+                        <p class="bg-primary artikel text-center mb-2 pt-1 pb-1" style="color:white; width:213px; font-size: 15px; margin-top: -15px; margin-left: -15px;">
                             {{ $artikel->category->name }}</p>
-                        <a href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
+                        <a class="fw-bold" style="color: #0F00FF
+                        " href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
                         <p>{{ Str::words($artikel->excerpt, 25) }}</p>
                     </div>
             </div>

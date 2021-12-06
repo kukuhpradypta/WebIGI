@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Ikatan Geografi Indonesia</title>
+    <title>Ikatan Geografi Indonesia - PTN/PTS Geografi</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -13,15 +13,8 @@
     <link href="{{ asset('template/assets/img/favicon.png') }}" rel="icon" />
     <link href="{{ asset('template/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon" />
 
-    <!--Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('template/assets/vendor/animate.css/animate.min.css') }}" rel="stylesheet" />
@@ -70,7 +63,7 @@
     </style>
 </head>
 
-<body style="font-family: 'Poppins', sans-serif;">
+<body>
     <!-- ======= Top Bar ======= -->
 
     <!-- ======= Header ======= -->
@@ -98,7 +91,7 @@
                         <a class="nav-link scrollto" href="/kegiatanigi">kegiatan IGI</a>
                     </li>
                     <li>
-                        <a class="nav-link scrollto" href="keanggotaan">Keanggotaan </a>
+                        <a class="nav-link scrollto" href="/keanggotaan">Keanggotaan </a>
                     </li>
                     <li>
                         <a class="getstarted scrollto rounded-pill" href="#about">Login</a>
@@ -154,31 +147,39 @@
 
     <main id="main">
         <!-- ======= Featured Services Section ======= -->
-        
         <section id="featured-services" class="container-fluid p-5 featured-services section-bg">
-                <div class="bg-primary mt-1 mb-3 text-center col-12 fw-bold py-2 text-light"
-                    >YOUTUBE IGI CHANNEL
+            <div class="bg-primary mt-1 mb-3 text-center col-12 fw-bold py-2 text-light"
+                >YOUTUBE IGI CHANNEL
+            </div>
+            <div class="row no-gutters">
+                @foreach ($vidios as $vidio)
+
+
+                <div class="col-lg-4 col-md-6">
+                    <iframe width="100%" height="250" src="{{ $vidio->vidio }}" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+
                 </div>
-                <div class="row no-gutters">
-                    @foreach ($vidios as $vidio)
+            @endforeach
+        </div> 
+    </section>
 
+        <!-- End Featured Services Section -->
 
-                    <div class="col-lg-4 col-md-6">
-                        <iframe width="100%" height="250" src="{{ $vidio->vidio }}" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+        <!-- ======= About Us Section ======= -->
 
-                    </div>
-                @endforeach
-            </div> 
-        </section>
+        <!-- End About Us Section -->
 
+        <!-- ======= Why Us Section ======= -->
+        <div class="col-lg-6 col-md-6 content-item">
+            {{-- @yield('content') --}}
+        </div>
         <section id="why-us" class="why-us">
             <div class="container-fluid">
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-6 content-item">
-
 
                         <div class="col-12">
                             <div class="bg-primary ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
@@ -301,19 +302,40 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-md-6 content-item">
-                        <div class="col-12 mb-4">
-                            @yield('content')
-                            @yield('loadmore')
+                    
+
+                    <div class="col-lg-6 col-md-6 content-item" >
+                        <div style="margin-left: -11px;" class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
+                            >PTN/PTS GEOGRAFI
                         </div>
-                        <div class="col-12">
-                            @yield('content2')
+                        <div class="row">
+                            @forelse ($ptnpts as $artikel)
+                                <div class="card col-lg-4 col-md-6 pe-2 ani">
+                                    <a href="/showartikel/{{ $artikel->slug }}">
+                                        @if (file_exists(public_path('article-img/' . $artikel->image)))
+                                            <img src="{{ 'article-img/' . $artikel->image }}" class="ftk card-img-top pt-2" alt="..."
+                                                height="170px">
+                                        @else
+                                            <img src="{{ asset('storage/' . $artikel->image) }}" class="ftk card-img-top pt-2" alt="..."
+                                                height="170px">
+                                            <p class="bg-primary artikel text-center mb-2 pt-1 pb-1" style="color:white; font-size: 12px;">
+                                                {{ $artikel->category->name }}</p>
+                                        @endif
+                                        <div class="card-body">
+                                            <a class="fw-bold" style="color: #0F00FF;" href="/showartikel/{{ $artikel->slug }}">{{ Str::words($artikel->title, 5) }}</a>
+                                            <p>{{ Str::words($artikel->excerpt, 25) }}</p>
+                                        </div>
+                                </div>
+                                </a>
+                            @empty
+                                <div class="btn btn-danger">
+                                    Tidak Ada Artikel
+                                </div>
+                            @endforelse
                         </div>
+                        <br><br>
                     </div>
-
-
                     <div class="col-lg-3 col-md-6 content-item">
-
                         <div class="col-12">
                             <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
                                 >PTN/PTS GEOGRAFI
@@ -411,11 +433,9 @@
                     </div>
                 </div>
             </div>
-            </div>
-
         </section>
 
-
+        
         <!-- End Why Us Section -->
 
         <!-- ======= Our Clients Section ======= -->
@@ -448,11 +468,12 @@
                 </div>
             </div>
         </footer>
-        <!-- End Footer`1 -->
+        <!-- End Footer -->
 
         <a href="#" class="bg-primary back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i>
         </a>
+
         <!-- Vendor JS Files -->
         <script src="{{ asset('template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('template/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
