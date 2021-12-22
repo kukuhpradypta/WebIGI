@@ -12,27 +12,18 @@ use App\Models\Slider;
 
 class KegiatanController extends Controller
 {
-    //     public function index1()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.elearning', compact('sliders'));
-    // }
-    //     public function index2()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.jurnalilmiah', compact('sliders'));
-    // }
-    //     public function index3()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.profileanggota', compact('sliders'));
-    // }
-    //     public function index4()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.sharingcontent', compact('sliders'));
-    // }
-            public function index5()
+    public function index1()
+    {
+        $sliders = Slider::all();
+        return view('kegiatan.berita', compact('sliders'));
+    }
+        public function index2()
+    {
+        $sliders = Slider::all();
+        return view('kegiatan.profiligidanpengurus', compact('sliders'));
+    }
+
+            public function index6()
     {
         $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
         $article = Post::where('status','PUBLISHED')->latest()->paginate(6);

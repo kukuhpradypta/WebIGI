@@ -26,15 +26,25 @@ use App\Models\Slider;
 //     return view('template.template');
 // });
 Route::get('/', 'HomeController@index');
+
 Route::get('/elearning', 'KeilmuanController@index1');
 Route::get('/jurnalilmiah', 'KeilmuanController@index2');
 Route::get('/profileanggota', 'KeilmuanController@index3');
 Route::get('/sharingcontent', 'KeilmuanController@index4');
 Route::get('/keilmuangeografi', 'KeilmuanController@index5');
+
 Route::get('/ptnptsgeografi', 'HomeController@index2');
-Route::get('/informasikeprofesian', 'KeprofesianController@index5');
-Route::get('/kegiatanigi', 'KegiatanController@index5');
-Route::get('/keanggotaan', 'KeanggotaanController@index5');
+
+Route::get('/jeniskeprofesian', 'KeprofesianController@index1');
+Route::get('/profillembaga', 'KeprofesianController@index2');
+Route::get('/informasidanpeluang', 'KeprofesianController@index3');
+Route::get('/informasikeprofesian', 'KeprofesianController@index4');
+
+Route::get('/berita', 'KegiatanController@index1');
+Route::get('/profiligidanpengurus', 'KegiatanController@index2');
+Route::get('/kegiatanigi', 'KegiatanController@index6');
+
+Route::get('/keanggotaan', 'KeanggotaanController@index6');
 // Route::get('/', 'HomeController@index');
 Route::get('/showartikel/{id}', function ($id) {
     $news = Post::where('status','PUBLISHED')->latest()->paginate(10);

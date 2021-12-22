@@ -98,11 +98,18 @@
                     <li>
                         <a class="nav-link scrollto" href="/ptnptsgeografi">PTN/PTS Geografi</a>
                     </li>
-                    <li>
-                        <a class="nav-link scrollto" href="/informasikeprofesian">Informasi Keprofesian</a>
+                    <li class="dropdown"><a>Informasi Keprofesian <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="jeniskeprofesian">Jenis Keprofesian</a></li>
+                            <li><a href="profillembaga">Profil Lembaga</a></li>
+                            <li><a href="informasidanpeluang">Informasi dan Peluang</a></li>
+                        </ul>
                     </li>
-                    <li>
-                        <a class="nav-link scrollto" href="/kegiatanigi">kegiatan IGI</a>
+                    <li class="dropdown"><a>Kegiatan IGI <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="berita">Berita dan Aktivitas</a></li>
+                            <li><a href="profiligidanpengurus">Profil IGI dan Pengurus</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="keanggotaan">Keanggotaan </a>
