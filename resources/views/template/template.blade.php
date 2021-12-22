@@ -78,15 +78,22 @@
         <div class="container d-flex align-items-center">
             {{-- <h1 class="logo me-auto"><a href="index.html">Green</a></h1> --}}
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.html" class="logo me-auto"><img src="{{ asset('template/assets/img/team/logo-igi-ok-2.PNG') }}" alt="" class="img-fluid"></a>
+            <a href="index.html" class="logo me-auto"><img
+                    src="{{ asset('template/assets/img/team/logo-igi-ok-2.PNG') }}" alt="" class="img-fluid"></a>
 
             <nav id="navbar" class="navbar">
                 <ul>
                     <li>
                         <a class="nav-link scrollto active" href="/">Home</a>
                     </li>
-                    <li>
-                        <a class="nav-link scrollto" href="/keilmuangeografi">Keilmuan Geografi</a>
+                    <li class="dropdown"><a>Keilmuan Geografi <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="elearning">E-Learning Content</a></li>
+                            <li><a href="jurnalilmiah">Jurnal Ilmiah</a></li>
+                            <li><a href="sharingcontent">Sharing Content</a></li>
+                            <li><a href="profileanggota">Profile Anggota</a></li>
+                            <li><a href="keilmuangeografi">Keilmuan geografi</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="/ptnptsgeografi">PTN/PTS Geografi</a>
@@ -113,7 +120,7 @@
 
     <!-- ======= Hero Section ======= -->
     <section id="hero">
-        @if (!request()->is('/registalum'))
+        @if (!request()->is())
             <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
@@ -154,13 +161,12 @@
 
     <main id="main">
         <!-- ======= Featured Services Section ======= -->
-        
+
         <section id="featured-services" class="container-fluid p-5 featured-services section-bg">
-                <div class="bg-primary mt-1 mb-3 text-center col-12 fw-bold py-2 text-light"
-                    >YOUTUBE IGI CHANNEL
-                </div>
-                <div class="row no-gutters">
-                    @foreach ($vidios as $vidio)
+            <div class="bg-primary mt-1 mb-3 text-center col-12 fw-bold py-2 text-light">YOUTUBE IGI CHANNEL
+            </div>
+            <div class="row no-gutters">
+                @foreach ($vidios as $vidio)
 
 
                     <div class="col-lg-4 col-md-6">
@@ -171,7 +177,7 @@
 
                     </div>
                 @endforeach
-            </div> 
+            </div>
         </section>
 
         <section id="why-us" class="why-us">
@@ -181,8 +187,8 @@
 
 
                         <div class="col-12">
-                            <div class="bg-primary ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
-                                >KEILMUAN GEOGRAFI
+                            <div class="bg-primary ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2">KEILMUAN
+                                GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -190,26 +196,26 @@
                                 @forelse ($article1 as $artikel1)
                                     <div class="ani bg-light col-md-6 col-lg-4 col-10 mb-2 "
                                         style=" width: 100%; margin-left: 20px;">
-                                            <a class="card-petugas" href="/showartikel/{{ $artikel1->slug }}">
-                                                <div class="row">
-                                                    <div class="col-4 mt-3 mb-3">
-                                                        @if (file_exists(public_path('article-img/' . $artikel1->image)))
-                                                            <img src="{{ 'article-img/' . $artikel1->image }}"
-                                                                class="card-img-top" alt="...">
-                                                        @else
-                                                            <img src="{{ asset('storage/' . $artikel1->image) }}"
-                                                                class="card-img-top" alt="...">
-                                                        @endif
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <div class="card-body" style="width: 100%">
-                                                            <p class="fw-bold" style="color: #0F00FF;">
-                                                                {{ Str::words($artikel1->title, 5) }}</p>
-                                                            <p>{{ Str::words($artikel1->excerpt, 25) }}</p>
-                                                        </div>
+                                        <a class="card-petugas" href="/showartikel/{{ $artikel1->slug }}">
+                                            <div class="row">
+                                                <div class="col-4 mt-3 mb-3">
+                                                    @if (file_exists(public_path('article-img/' . $artikel1->image)))
+                                                        <img src="{{ 'article-img/' . $artikel1->image }}"
+                                                            class="card-img-top" alt="...">
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $artikel1->image) }}"
+                                                            class="card-img-top" alt="...">
+                                                    @endif
+                                                </div>
+                                                <div class="col-8">
+                                                    <div class="card-body" style="width: 100%">
+                                                        <p class="fw-bold" style="color: #0F00FF;">
+                                                            {{ Str::words($artikel1->title, 5) }}</p>
+                                                        <p>{{ Str::words($artikel1->excerpt, 25) }}</p>
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </div>
+                                        </a>
                                     </div>
                                     </a>
                                 @empty
@@ -220,8 +226,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="bg-primary ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2"
-                                >INFORMASI KEPROFESIAN
+                            <div class="bg-primary ms-1 mt-3 text-center col-12 fw-bold py-2 text-light mb-2">INFORMASI
+                                KEPROFESIAN
                             </div>
 
                             <div class="row d-flex justify-content-center flex-wrap ml-5" data-aos="zoom-in"
@@ -260,8 +266,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
-                            >KEANGGOTAAN
+                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2">
+                                KEANGGOTAAN
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -315,8 +321,8 @@
                     <div class="col-lg-3 col-md-6 content-item">
 
                         <div class="col-12">
-                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2 "
-                                >PTN/PTS GEOGRAFI
+                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2 ">PTN/PTS
+                                GEOGRAFI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -356,8 +362,8 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2"
-                                >KEGIATAN IGI
+                            <div class="bg-primary ms-1 mt-3 col-12 py-2 text-center fw-bold text-light mb-2">KEGIATAN
+                                IGI
                             </div>
 
                             <div class="row d-flex justify-content-center  flex-wrap" data-aos="zoom-in"
@@ -401,9 +407,9 @@
                             </div>
                             @foreach ($settings as $item)
                                 @if ($item->display_name == 'Instagram Igi')
-                                <a href="https://www.instagram.com/igi_geografi/">
-                                    <img src="{{ asset("storage/$item->value") }}" class="mt-2" alt=""
-                                        width="100%" height="400px">
+                                    <a href="https://www.instagram.com/igi_geografi/">
+                                        <img src="{{ asset("storage/$item->value") }}" class="mt-2" alt=""
+                                            width="100%" height="400px">
                                     </a>
                                 @endif
                             @endforeach
@@ -451,7 +457,7 @@
         <!-- End Footer`1 -->
 
         <a href="#" class="bg-primary back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i>
+                class="bi bi-arrow-up-short"></i>
         </a>
         <!-- Vendor JS Files -->
         <script src="{{ asset('template/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

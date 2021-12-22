@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WebController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KeilmuanController;
 
 use App\Models\Category;
 use App\Models\Post;
@@ -21,15 +22,19 @@ use App\Models\Slider;
 |
 */
 
-// Route::get('/home', function () {
-//     return view('home');
+// Route::get('/template', function () {
+//     return view('template.template');
 // });
 Route::get('/', 'HomeController@index');
-Route::get('/keilmuangeografi', 'HomeController@index1');
+Route::get('/elearning', 'KeilmuanController@index1');
+Route::get('/jurnalilmiah', 'KeilmuanController@index2');
+Route::get('/profileanggota', 'KeilmuanController@index3');
+Route::get('/sharingcontent', 'KeilmuanController@index4');
+Route::get('/keilmuangeografi', 'KeilmuanController@index5');
 Route::get('/ptnptsgeografi', 'HomeController@index2');
-Route::get('/informasikeprofesian', 'HomeController@index3');
-Route::get('/kegiatanigi', 'HomeController@index4');
-Route::get('/keanggotaan', 'HomeController@index5');
+Route::get('/informasikeprofesian', 'KeprofesianController@index5');
+Route::get('/kegiatanigi', 'KegiatanController@index5');
+Route::get('/keanggotaan', 'KeanggotaanController@index5');
 // Route::get('/', 'HomeController@index');
 Route::get('/showartikel/{id}', function ($id) {
     $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
@@ -44,8 +49,9 @@ Route::get('/showartikel/{id}', function ($id) {
         $article4 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
         $article5 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
     $articleShow = App\Models\Post::where('slug', $id)->first();
-    return view('showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
+    return view('homepage.showartikel', compact('articleShow','vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
 })->name('showartikel');
+
 Route::get('/artikel', function () {
     
        $news = Post::where('status','PUBLISHED')->latest()->paginate(10);
@@ -60,7 +66,7 @@ Route::get('/artikel', function () {
         $article4 = Post::where('status','PUBLISHED')->where('category_id','4')->latest()->paginate(3);
         $article5 = Post::where('status','PUBLISHED')->where('category_id','3')->latest()->paginate(3);
 
-    return view('artikel', compact('vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
+    return view('homepage.artikel', compact('vidios','article','posts','news','article1','article2','sliders','article3','article4','article5','settings'));
 });
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
