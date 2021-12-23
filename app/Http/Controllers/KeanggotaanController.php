@@ -12,26 +12,26 @@ use App\Models\Slider;
 
 class KeanggotaanController extends Controller
 {
-    //     public function index1()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.elearning', compact('sliders'));
-    // }
-    //     public function index2()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.jurnalilmiah', compact('sliders'));
-    // }
-    //     public function index3()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.profileanggota', compact('sliders'));
-    // }
-    //     public function index4()
-    // {
-    //     $sliders = Slider::all();
-    //     return view('keprofesian.sharingcontent', compact('sliders'));
-    // }
+        public function index1()
+    {
+        $sliders = Slider::all();
+        return view('keanggotaan.pendaftarananggota', compact('sliders'));
+    }
+        public function index2()
+    {
+        $sliders = Slider::all();
+        return view('keanggotaan.updatedata', compact('sliders'));
+    }
+        public function index3()
+    {
+        $sliders = Slider::all();
+        return view('keanggotaan.informasiseputaranggotaigi', compact('sliders'));
+    }
+        public function index4()
+    {
+        $sliders = Slider::all();
+        return view('keanggotaan.opinidankomunikasi', compact('sliders'));
+    }
             public function index5()
     {
         $news = Post::where('status','PUBLISHED')->latest()->paginate(10);

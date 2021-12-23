@@ -111,8 +111,13 @@
                             <li><a href="profiligidanpengurus">Profil IGI dan Pengurus</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a class="nav-link scrollto" href="keanggotaan">Keanggotaan </a>
+                    <li class="dropdown"><a>Keanggotaan <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="pendaftarananggota">Pendaftaran Anggota</a></li>
+                            <li><a href="updatedata">Update Data</a></li>
+                            <li><a href="informasiseputaranggotaigi">Informasi Seputar Anggota IGI</a></li>
+                            <li><a href="opinidankomunikasi">Opini dan Komunikasi</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a class="getstarted scrollto rounded-pill" href="#about">Login</a>
