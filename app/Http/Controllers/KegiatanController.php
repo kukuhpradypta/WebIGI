@@ -15,12 +15,27 @@ class KegiatanController extends Controller
     public function index1()
     {
         $sliders = Slider::all();
-        return view('kegiatan.berita', compact('sliders'));
+        return view('kegiatan.beritadanaktivitas', compact('sliders'));
     }
         public function index2()
     {
         $sliders = Slider::all();
         return view('kegiatan.profiligidanpengurus', compact('sliders'));
+    }
+        public function index3()
+    {
+        $sliders = Slider::all();
+        return view('kegiatan.jaringanigi', compact('sliders'));
+    }
+        public function index4()
+    {
+        $sliders = Slider::all();
+        return view('kegiatan.profiljaringan', compact('sliders'));
+    }
+        public function index5()
+    {
+        $sliders = Slider::all();
+        return view('kegiatan.statistikanggota', compact('sliders'));
     }
 
             public function index6()

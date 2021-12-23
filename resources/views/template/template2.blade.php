@@ -107,8 +107,11 @@
                     </li>
                     <li class="dropdown"><a>Kegiatan IGI <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="berita">Berita dan Aktivitas</a></li>
+                            <li><a href="beritadanaktivitas">Berita dan Aktivitas</a></li>
                             <li><a href="profiligidanpengurus">Profil IGI dan Pengurus</a></li>
+                            <li><a href="jaringanigi">Jaringan IGI</a></li>
+                            <li><a href="profiljaringan">Profil Jaringan</a></li>
+                            <li><a href="statistikanggota">Statistik Anggota</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a>Keanggotaan <i class="bi bi-chevron-down"></i></a>
